@@ -1,6 +1,6 @@
 #version 0.0.1
 FROM centos:latest #基础镜像
-MAINTAINER frank "joyoak@163.com"
+MAINTAINER joyoak "joyoak@163.com"
 
 RUN yum -y groupinstall "development tools"
 RUN yum -y install git rpm rpm-build rpmdevtools rng-tools
@@ -13,3 +13,5 @@ CMD /etc/init.d/sshd restart
 CMD service sshd start
 
 EXPOSE 22
+
+#docker build -t="joyoak/centos:base" git@github.com:joyoak/docker
